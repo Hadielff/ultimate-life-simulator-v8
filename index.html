@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#100d1b">
+<meta name="description" content="Ultimate Life Simulator: Beyond Reality — simulador de vida offline com escolhas, família, carreira e fantasia vampírica.">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Ultimate Life Simulator: Beyond Reality</title>
+<style>
+:root{--bg:#0c0a12;--panel:#171321;--panel2:#211a30;--line:#3b2c50;--text:#f3edf9;--muted:#b8a9c9;--violet:#a88bff;--cyan:#74e5e8;--gold:#f1ca83;--red:#ff858f;--green:#9ce6b2}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#211635 0,#0c0a12 55%);color:var(--text);font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}button,input,select{font:inherit}button{cursor:pointer;color:var(--text);background:linear-gradient(135deg,#302443,#211a30);border:1px solid #55416e;border-radius:12px;padding:10px 13px;transition:transform .12s,border-color .12s}button:active{transform:scale(.98)}button:hover{border-color:var(--cyan)}button:disabled{opacity:.45;cursor:not-allowed}.primary{background:linear-gradient(135deg,#6750a5,#3c2d65);border-color:#a88bff}.danger{border-color:#8b414f}.muted{color:var(--muted)}.small{font-size:12px}.hidden{display:none!important}.wrap{max-width:1100px;margin:auto;padding:14px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}.brand{font-weight:850;letter-spacing:.03em}.brand span{color:var(--cyan)}.topstats{display:flex;gap:8px;flex-wrap:wrap}.pill{border:1px solid var(--line);background:#171321;border-radius:99px;padding:6px 10px;font-size:12px}.layout{display:grid;grid-template-columns:220px 1fr;gap:14px;margin-top:14px}.side,.panel{background:linear-gradient(160deg,#1b1627,#12101a);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 12px 35px #0002}.nav{display:grid;gap:7px}.nav button{text-align:left}.nav button.active{background:#392a50;border-color:var(--violet)}.main{min-width:0}.hero{padding:18px;border:1px solid #4a3764;border-radius:16px;background:linear-gradient(125deg,#2c2041aa,#13101b);margin-bottom:12px}.hero h1{margin:0 0 5px;font-size:clamp(22px,4vw,34px)}h2{font-size:19px;margin:0 0 12px}h3{font-size:15px;margin:0 0 8px}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.stack{display:grid;gap:10px}.card{background:#100e18a8;border:1px solid var(--line);border-radius:14px;padding:12px;min-width:0}.metric{display:flex;justify-content:space-between;gap:8px;font-size:12px;margin:7px 0 4px}.bar{height:7px;border-radius:99px;background:#332941;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--violet),var(--cyan));border-radius:99px}.portrait{width:78px;height:90px;display:grid;place-items:center;border-radius:13px;border:1px solid #6c527e;background:radial-gradient(circle at 50% 25%,#bfa3e9,#55416d 45%,#1a1524 80%);font-size:38px;flex-shrink:0}.npc{display:flex;gap:10px;align-items:center}.event{border-color:#67508a;background:linear-gradient(145deg,#251b36,#14111d)}.event h2{color:var(--gold)}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}.choices button{text-align:left;min-height:60px}.scene{min-height:230px;border:1px solid #5b4770;border-radius:15px;padding:16px;background:linear-gradient(180deg,#24233a,#171724 60%,#21172a);position:relative;overflow:hidden}.scene:before{content:"";position:absolute;inset:auto -10% -50px;height:140px;background:radial-gradient(ellipse,#423055,#171321 70%);pointer-events:none}.scene>*{position:relative}.scene-art{font-size:42px;margin:8px 0}.tabcontent{display:none}.tabcontent.active{display:block}.log{max-height:270px;overflow:auto;display:grid;gap:8px}.logitem{border-left:2px solid var(--violet);padding:7px 10px;background:#ffffff05;border-radius:0 8px 8px 0}.field{display:grid;gap:5px}.field input,.field select{width:100%;padding:10px;border-radius:10px;background:#0f0d16;color:var(--text);border:1px solid var(--line)}.status{font-size:12px;color:var(--muted);margin-top:10px}.footer{padding:20px 0;text-align:center;color:var(--muted);font-size:11px}.notice{padding:10px 12px;border-radius:12px;background:#263a36;border:1px solid #476d60;color:#c6f6d9}.warn{background:#39232b;border-color:#74424e;color:#ffd1d5}.tag{display:inline-block;padding:3px 7px;border:1px solid var(--line);border-radius:8px;font-size:11px;color:var(--cyan);margin:2px}.dead{border:1px solid #9e414d;background:#2a1219;padding:14px;border-radius:14px}.bottomnav{display:none}
+@media(max-width:720px){.wrap{padding:10px}.layout{grid-template-columns:1fr}.side{padding:8px}.nav{display:flex;overflow:auto;gap:6px}.nav button{white-space:nowrap;padding:8px 10px;font-size:12px}.side .small{display:none}.top{align-items:flex-start;flex-direction:column}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.choices{grid-template-columns:1fr}.hero{padding:14px}.portrait{width:65px;height:76px}.layout{margin-top:10px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <div><div class="brand">✦ ULTIMATE LIFE SIMULATOR <span>BEYOND REALITY</span></div><div class="muted small">Sua vida. Suas escolhas. Consequências que permanecem.</div></div>
+ <div class="topstats"><span class="pill" id="headAge">Idade: —</span><span class="pill" id="headMoney">Saldo: —</span><span class="pill" id="headMode">Modo: —</span></div>
+</header>
+<div id="setup" class="panel" style="margin-top:14px">
+ <div class="hero"><h1>Escreva uma vida que ninguém mais viverá.</h1><p class="muted">Crie sua pessoa, forme laços, construa uma carreira ou atravesse o véu sobrenatural. O progresso é salvo neste dispositivo.</p></div>
+ <div class="grid2">
+  <label class="field">Nome do personagem<input id="newName" maxlength="28" placeholder="Ex.: Adrian Vale" value="Alex Vale"></label>
+  <label class="field">Gênero para retrato e narrativa<select id="newGender"><option value="masc">Masculino</option><option value="fem">Feminino</option><option value="nb">Não binário</option></select></label>
+  <label class="field">Modo de vida<select id="newMode"><option value="realista">Realista — vida contemporânea</option><option value="fantasia">Fantasia — sobrenatural disponível</option></select></label>
+  <label class="field">Local de nascimento<select id="newCity"><option>Vila Serena</option><option>Nova Aurora</option><option>Porto Nebuloso</option><option>Vale das Brumas</option><option>São Âmbar</option></select></label>
+ </div>
+ <div class="row" style="margin-top:14px"><button class="primary" id="startBtn">Começar nova vida</button><button id="continueBtn">Continuar vida salva</button><button id="wipeBtn" class="danger">Apagar salvamento</button></div>
+ <p class="status">Funciona offline depois de publicado e aberto uma vez. O salvamento fica no armazenamento local deste navegador.</p>
+</div>
+<div id="game" class="hidden">
+ <div class="layout">
+  <aside class="side"><div class="nav" id="nav">
+   <button data-tab="vida" class="active">✧ Visão geral</button><button data-tab="cena">⌂ Cena Real</button><button data-tab="familia">♡ Família & relações</button><button data-tab="carreira">⚒ Carreira & dinheiro</button><button data-tab="cidade">⌖ Cidade & viagens</button><button data-tab="vampiro">☾ Caminho vampírico</button><button data-tab="diario">▤ Diário & legado</button><button data-tab="opcoes">⚙ Configurações</button>
+  </div><p class="small muted">As ações alteram atributos, vínculos, recursos e eventos futuros. Não há recompensa por spam de cliques.</p></aside>
+  <main class="main">
+   <section class="tabcontent active" id="tab-vida">
+    <div class="hero"><div class="row"><div class="portrait" id="mainPortrait">🧑</div><div style="flex:1"><h1 id="charTitle">Sua vida</h1><div id="charSub" class="muted"></div><div id="charTags"></div></div></div></div>
+    <div class="grid3" id="metrics"></div>
+    <div class="panel event" id="yearEvent" style="margin-top:12px"><h2>Um novo capítulo aguarda</h2><p>Quando quiser avançar o tempo, envelheça exatamente um ano. Suas escolhas deixam marcas.</p><button id="ageBtn" class="primary">Avançar 1 ano</button></div>
+    <div class="panel" style="margin-top:12px"><h2>Últimas notícias da sua vida</h2><div class="log" id="recentLog"></div></div>
+   </section>
+   <section class="tabcontent" id="tab-cena">
+    <div class="hero"><h1>Cena Real</h1><p class="muted">Explore os lugares da sua rotina e interaja com objetos e pessoas. A cena se adapta à sua idade e ao estado da sua vida.</p></div>
+    <div class="scene"><div id="sceneTitle"><h2>Casa da família</h2></div><div class="scene-art" id="sceneArt">🏠 🌙</div><p id="sceneDesc">Uma casa simples guarda conversas, memórias e pequenos mistérios.</p></div>
+    <div class="grid3" id="scenePlaces" style="margin-top:10px"></div>
+    <div class="panel" style="margin-top:10px"><h2>Interações disponíveis</h2><div id="sceneActions" class="row"></div><p class="status" id="sceneStatus">Escolha um local para ver ações.</p></div>
+   </section>
+   <section class="tabcontent" id="tab-familia">
+    <div class="hero"><h1>Família & relações</h1><p class="muted">Pessoas persistentes, com nomes, idades, humor e vínculos que mudam conforme suas decisões.</p></div><div id="familyList" class="stack"></div>
+    <div class="panel" style="margin-top:12px"><h2>Conhecer alguém</h2><div class="row"><button id="meetBtn">Conhecer uma pessoa</button><button id="callFamilyBtn">Reunir a família</button></div></div>
+   </section>
+   <section class="tabcontent" id="tab-carreira">
+    <div class="hero"><h1>Carreira, estudos & economia</h1><p class="muted">Desenvolva competências, procure trabalho, cuide dos gastos e construa patrimônio sem atalhos mágicos.</p></div>
+    <div id="careerSummary" class="grid2"></div><div class="panel" style="margin-top:12px"><h2>Ações</h2><div class="row" id="careerActions"></div></div>
+    <div class="panel" style="margin-top:12px"><h2>Moradia</h2><div id="housing"></div></div>
+   </section>
+   <section class="tabcontent" id="tab-cidade">
+    <div class="hero"><h1>Cidade, calendário & exploração</h1><p class="muted" id="weatherText"></p></div><div id="cityCards" class="grid2"></div>
+    <div class="panel" style="margin-top:12px"><h2>Viajar para outra cidade</h2><div class="row"><select id="travelCity"></select><button id="travelBtn">Viajar (custo variável)</button></div></div>
+    <div class="panel" style="margin-top:12px"><h2>Notícias locais</h2><div class="log" id="newsList"></div></div>
+   </section>
+   <section class="tabcontent" id="tab-vampiro">
+    <div class="hero"><h1>☾ O caminho vampírico</h1><p class="muted">No modo Fantasia, escolhas e missões podem despertar a linhagem. A transformação traz poderes e custos persistentes.</p></div>
+    <div id="vampireContent"></div>
+   </section>
+   <section class="tabcontent" id="tab-diario">
+    <div class="hero"><h1>Diário, memória & legado</h1><p class="muted">Eventos importantes permanecem registrados. A morte encerra a vida atual; seu legado fica para consulta.</p></div>
+    <div class="grid2" id="legacySummary"></div><div class="panel" style="margin-top:12px"><h2>Diário cronológico</h2><div class="log" id="fullLog"></div></div>
+   </section>
+   <section class="tabcontent" id="tab-opcoes">
+    <div class="hero"><h1>Configurações</h1><p class="muted">Ajuste sons, salve o progresso ou reinicie uma vida.</p></div>
+    <div class="row"><button id="soundBtn">Som: ligado</button><button id="saveBtn">Salvar agora</button><button id="exportBtn">Exportar salvamento</button><button id="importBtn">Importar salvamento</button><input type="file" id="importFile" accept="application/json" class="hidden"><button id="newLifeBtn" class="danger">Encerrar e criar outra vida</button></div>
+    <p class="status">O jogo não envia dados para servidores. Exportar salvamento cria um arquivo JSON local.</p>
+   </section>
+  </main>
+ </div>
+</div>
+<div class="footer">BEYOND REALITY • V6 • Salvo localmente • Feito para navegador móvel e desktop</div>
+</div>
+<script>
+(()=>{
+'use strict';
+const SAVE_KEY='uls_beyond_reality_v6';
+const $=id=>document.getElementById(id);
+const cities=['Vila Serena','Nova Aurora','Porto Nebuloso','Vale das Brumas','São Âmbar'];
+const places={
+ casa:{title:'Casa da família',art:'🏠 🕯️',desc:'Um lugar de conforto e tensão cotidiana. Pequenas conversas podem mudar o humor de todos.',actions:[['Conversar com a família','talk'],['Descansar','rest'],['Organizar a casa','chores']]},
+ cozinha:{title:'Cozinha & geladeira',art:'🥣 🧃 🍎',desc:'Há ingredientes simples e algo para preparar. Comer melhora o bem-estar, mas os mantimentos não são infinitos.',actions:[['Preparar uma refeição','cook'],['Verificar a geladeira','fridge'],['Lavar a louça','dishes']]},
+ quintal:{title:'Quintal',art:'🌿 🪴 🐈',desc:'Ar fresco, plantas e um canto tranquilo para pensar.',actions:[['Cuidar das plantas','plants'],['Respirar e refletir','reflect'],['Brincar com um animal','pet']]},
+ lagoa:{title:'Lagoa escondida',art:'🌙 💧 🪷',desc:'A água reflete o céu. Às vezes, objetos antigos aparecem entre as pedras.',actions:[['Observar a água','pond'],['Procurar pistas','clue'],['Descansar à margem','restpond']]},
+ floresta:{title:'Floresta das Brumas',art:'🌲 🦉 ✨',desc:'Trilhas mudam com o clima. No modo Fantasia, presenças antigas podem observar de longe.',actions:[['Explorar trilha','explore'],['Investigar um som','sound'],['Voltar para casa','home']]}
+};
+const firstNames={masc:['Adrian','Caio','Dante','Elias','Luca','Noah','Rafael','Theo','Victor','Gabriel','Mateus','Ícaro'],fem:['Amara','Aurora','Bianca','Cecília','Dália','Elisa','Helena','Íris','Lívia','Maya','Nina','Valentina'],nb:['Alex','Ariel','Dani','Gael','Noa','Robin','Sam','Sol','Íris','Luca']};
+const surnames=['Vale','Moreira','Avelar','Monteiro','Silva','Vesper','Alencar','Moura','Ferraz','Santiago','Luz','Brum'];
+const jobs=[{name:'Aprendiz',min:15,salary:120,skill:'education'},{name:'Atendente',min:16,salary:850,skill:'social'},{name:'Auxiliar administrativo',min:18,salary:1450,skill:'education'},{name:'Designer iniciante',min:18,salary:1800,skill:'creativity'},{name:'Técnico especializado',min:20,salary:2600,skill:'education'},{name:'Empreendedor',min:21,salary:900,skill:'creativity'},{name:'Pesquisador',min:23,salary:3300,skill:'education'},{name:'Diretor',min:30,salary:5200,skill:'social'}];
+const eventTemplates=[
+ {t:'Uma oportunidade inesperada',d:'Uma pessoa oferece uma oportunidade pequena, mas que pode abrir portas.',c:[['Aceitar e aprender', {education:5,reputation:2,mood:3}],['Pedir mais detalhes', {intelligence:2,mood:1}],['Recusar por enquanto',{mood:0}]]},
+ {t:'Um mal-entendido',d:'Uma conversa é interpretada de forma errada e alguém parece distante.',c:[['Conversar com calma',{relationships:4,social:2}],['Dar espaço por um tempo',{mood:1}],['Responder impulsivamente',{relationships:-5,mood:-4}]]},
+ {t:'Uma escolha de rotina',d:'Sua semana ficou cheia. Você precisa decidir onde colocar sua energia.',c:[['Priorizar estudos',{education:4,intelligence:2,energy:-4}],['Cuidar das relações',{relationships:4,mood:3}],['Descansar de verdade',{health:3,energy:8}]]},
+ {t:'Uma ideia criativa',d:'Uma ideia pode virar um projeto ou ficar apenas na imaginação.',c:[['Começar um projeto',{creativity:5,reputation:1,energy:-3}],['Anotar para depois',{creativity:2,mood:1}],['Compartilhar com alguém',{relationships:2,creativity:2}]]},
+ {t:'Uma despesa surpresa',d:'Surge um gasto não planejado. Seu orçamento precisa se adaptar.',c:[['Pagar e reorganizar',{money:-100,mood:-1}],['Negociar prazo',{money:-25,social:1}],['Adiar e revisar as contas',{money:0,stress:4}]]},
+ {t:'Uma chance de ajudar',d:'Alguém próximo precisa de apoio prático ou de alguém que escute.',c:[['Ajudar sem esperar retorno',{relationships:5,reputation:2,energy:-3}],['Oferecer conselho',{social:2,relationships:2}],['Dizer que não pode agora',{mood:0}]]},
+ {t:'Um rumor na cidade',d:'Uma história curiosa circula pelas ruas. Nem tudo que se diz é verdade.',c:[['Investigar fontes',{intelligence:3,clue:1}],['Ignorar o rumor',{mood:1}],['Espalhar sem confirmar',{reputation:-4,relationships:-2}]]},
+ {t:'Uma mudança no clima',d:'O tempo muda seus planos. Você pode se adaptar ou insistir.',c:[['Adaptar os planos',{intelligence:1,mood:2}],['Continuar mesmo assim',{energy:-3,creativity:1}],['Usar o tempo para descansar',{health:2,energy:4}]]},
+ {t:'Um encontro marcante',d:'Você conhece alguém com interesses parecidos. O primeiro contato é promissor.',c:[['Puxar conversa',{social:4,relationships:3}],['Ouvir primeiro',{intelligence:2,social:2}],['Seguir seu caminho',{mood:0}]]},
+ {t:'Um segredo antigo',d:'Uma pista sobre a história da sua família surge entre papéis guardados.',c:[['Pesquisar a origem',{clue:2,intelligence:3}],['Perguntar a um parente',{relationships:3,clue:1}],['Guardar a pista',{clue:1,mood:1}]]},
+ {t:'Uma decisão difícil',d:'Duas prioridades competem pela sua atenção e nenhuma solução é perfeita.',c:[['Escolher o dever',{education:2,stress:3}],['Escolher o coração',{relationships:4,mood:2}],['Buscar um meio-termo',{intelligence:2,relationships:1}]]},
+ {t:'Um talento adormecido',d:'Uma atividade revela que você pode ser melhor nisso do que imaginava.',c:[['Praticar com disciplina',{creativity:3,education:2,energy:-2}],['Procurar um mentor',{social:2,education:2}],['Experimentar por diversão',{mood:3,creativity:1}]]}
+];
+let state=null,scene='casa',soundOn=true,clickCtx=null;
+const clamp=(n,min=0,max=100)=>Math.max(min,Math.min(max,n));
+const rand=a=>a[Math.floor(Math.random()*a.length)];
+const money=n=>'¤ '+Math.round(n).toLocaleString('pt-BR');
+const log=(text,type='vida')=>{if(!state)return;state.log.unshift({age:state.age,year:state.year,text,type});state.log=state.log.slice(0,350);};
+function playTone(freq=520,dur=.045){if(!soundOn)return;try{const C=window.AudioContext||window.webkitAudioContext;const c=new C();const o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=freq;g.gain.setValueAtTime(.025,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+dur);o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+dur);o.onended=()=>c.close()}catch(e){}}
+function name(g){return rand(firstNames[g]||firstNames.nb)+' '+rand(surnames)}
+function makeNpc(role,age,gender){return {id:crypto.randomUUID?crypto.randomUUID():String(Math.random()),name:name(gender),role,age,gender,relationship:role==='Mãe'||role==='Pai'?75:role==='Irmão'||role==='Irmã'?65:45,mood:rand([45,55,60,70]),alive:true,portraitSeed:Math.floor(Math.random()*100000)}}
+function createLife(){
+ const n=$('newName').value.trim()||'Alex Vale',g=$('newGender').value,mode=$('newMode').value,city=$('newCity').value;
+ state={version:6,name:n,gender:g,mode,city,age:0,year:2026,birthYear:2026,money:1200,health:85,happiness:65,energy:90,intelligence:35,social:30,creativity:30,education:0,reputation:0,stress:10,relationships:0,clue:0,alive:true,job:null,educationPath:'Nenhum',home:'Casa da família',homeLevel:0,partner:null,children:[],friends:[],family:[],traits:rand([['Curioso','Leal'],['Reservado','Observador'],['Criativo','Determinado'],['Gentil','Ambicioso']]),vampire:{awakened:false,essence:100,rank:'Humano',skills:[],missions:0,ageVampire:0,lineage:'Desconhecida',bloodDebt:0},inventory:['Caderno antigo'],legacy:[],log:[],eventCount:0,yearSeed:Math.floor(Math.random()*1e9),lastEventKey:'',visited:[city],calendarMonth:1,weather:rand(['Céu limpo','Chuva leve','Neblina','Vento frio']),news:[],settings:{sound:true}};
+ state.family=[makeNpc('Mãe',28,'fem'),makeNpc('Pai',30,'masc'),makeNpc(g==='fem'?'Irmão':'Irmã',4,g==='fem'?'masc':'fem')];
+ state.family[0].name=name('fem');state.family[1].name=name('masc');
+ state.family[2].name=name(state.family[2].gender);
+ log('Nasceu em '+city+'. Sua história começa com a família e o mundo à sua volta.','nascimento');
+ save();startGame();render();
+}
+function save(){if(!state)return;try{localStorage.setItem(SAVE_KEY,JSON.stringify(state));$('headAge').textContent='Idade: '+state.age;$('headMoney').textContent='Saldo: '+money(state.money);$('headMode').textContent='Modo: '+(state.mode==='fantasia'?'Fantasia':'Realista')}catch(e){}}
+function load(){try{const s=JSON.parse(localStorage.getItem(SAVE_KEY));if(s&&s.version>=5){state=s;state.vampire=state.vampire||{awakened:false,essence:100,rank:'Humano',skills:[],missions:0,ageVampire:0};state.log=state.log||[];state.family=state.family||[];startGame();render();return true}}catch(e){}return false}
+function startGame(){$('setup').classList.add('hidden');$('game').classList.remove('hidden');soundOn=state.settings?.sound!==false;render()}
+function tab(t){document.querySelectorAll('.tabcontent').forEach(x=>x.classList.toggle('active',x.id==='tab-'+t));document.querySelectorAll('#nav button').forEach(x=>x.classList.toggle('active',x.dataset.tab===t));playTone(440)}
+function metric(label,val,color=''){return `<div class="card"><div class="metric"><span>${label}</span><b>${Math.round(val)}%</b></div><div class="bar"><i style="width:${clamp(val)}%;${color?'background:'+color:''}"></i></div></div>`}
+function portraitEmoji(g,age,seed){if(age<3)return '👶';if(age<13)return g==='fem'?'👧':g==='masc'?'👦':'🧒';if(age<20)return g==='fem'?'👩🏻‍🎓':g==='masc'?'🧑🏻‍🎓':'🧑‍🎓';if(age<60)return g==='fem'?'👩🏻':g==='masc'?'🧔🏻':'🧑🏻';return g==='fem'?'👵🏻':g==='masc'?'👴🏻':'🧓🏻'}
+function render(){
+ if(!state)return;
+ $('headAge').textContent='Idade: '+state.age+ (state.vampire.awakened?' • '+state.vampire.rank:'');
+ $('headMoney').textContent='Saldo: '+money(state.money);
+ $('headMode').textContent='Modo: '+(state.mode==='fantasia'?'Fantasia':'Realista');
+ $('charTitle').textContent=state.name+', '+state.age+' anos';
+ $('charSub').textContent=`${state.city} • ${state.job||state.educationPath||'Descobrindo o mundo'} • Ano ${state.year}`;
+ $('mainPortrait').textContent=portraitEmoji(state.gender,state.age,state.yearSeed);
+ $('charTags').innerHTML=state.traits.map(t=>`<span class="tag">${t}</span>`).join('')+(state.vampire.awakened?`<span class="tag">☾ ${state.vampire.rank}</span>`:'');
+ $('metrics').innerHTML=metric('Saúde',state.health)+metric('Felicidade',state.happiness)+metric('Energia',state.energy)+metric('Inteligência',state.intelligence)+metric('Social',state.social)+metric('Criatividade',state.creativity);
+ $('ageBtn').disabled=!state.alive;
+ $('recentLog').innerHTML=state.log.slice(0,6).map(l=>`<div class="logitem"><b>${l.age} anos • ${l.year}</b><br>${esc(l.text)}</div>`).join('')||'<p class="muted">Sua história ainda está começando.</p>';
+ renderScene();renderFamily();renderCareer();renderCity();renderVampire();renderDiary();$('soundBtn').textContent='Som: '+(soundOn?'ligado':'desligado');
+ if(!state.alive){$('yearEvent').innerHTML=`<div class="dead"><h2>Esta vida chegou ao fim</h2><p>${esc(state.name)} viveu até os ${state.age} anos. O diário e o legado continuam disponíveis, mas esta vida não pode avançar.</p><button id="newAfterDeath" class="primary">Começar outra vida</button></div>`;$('newAfterDeath').onclick=()=>{$('setup').classList.remove('hidden');$('game').classList.add('hidden')}}
+}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderEvent(title,desc,choices){$('yearEvent').innerHTML=`<h2>${esc(title)}</h2><p>${esc(desc)}</p><div class="choices">${choices.map((c,i)=>`<button data-choice="${i}">${i+1}. ${esc(c[0])}</button>`).join('')}</div><p class="status">As consequências são aplicadas uma vez por evento. O resultado depende do estado atual e das decisões anteriores.</p>`;$('yearEvent').querySelectorAll('[data-choice]').forEach(b=>b.onclick=()=>{playTone(640);choices[+b.dataset.choice][1]();})}
+function ageUp(){
+ if(!state.alive)return;
+ state.age++;state.year++;state.calendarMonth=state.calendarMonth%12+1;state.energy=clamp(state.energy-6);state.stress=clamp(state.stress+2);state.health=clamp(state.health-(state.age>75?3:state.age>55?1:0));state.happiness=clamp(state.happiness+(Math.random()*8-4));
+ state.family.forEach(n=>{if(n.alive)n.age=Math.max(0,n.age+1)});
+ state.vampire.ageVampire=state.vampire.awakened?state.vampire.ageVampire+1:0;
+ if(state.job&&state.age>=16){let job=jobs.find(j=>j.name===state.job);state.money+=job?job.salary*12:900;log('Você recebeu renda anual do trabalho ('+state.job+').','economia')}
+ if(state.age>=18)state.money-=Math.min(1800,Math.max(180,(state.homeLevel+1)*360));
+ if(state.vampire.awakened){state.vampire.essence=clamp(state.vampire.essence-(state.vampire.essence<30?8:3));if(state.vampire.essence===0){state.health=clamp(state.health-15);log('Sua essência vampírica chegou a 0%; os poderes ficaram indisponíveis e você está vulnerável.','vampiro')}}
+ if(state.age>100&&!state.vampire.awakened)state.health=clamp(state.health-8);
+ state.eventCount++;state.yearSeed=(state.yearSeed*9301+49297)%233280;
+ const ev=eventTemplates[(state.eventCount+Math.floor(state.yearSeed))%eventTemplates.length];
+ log('Aos '+state.age+' anos: '+ev.t+'. '+ev.d,'evento');
+ if(state.mode==='fantasia'&&!state.vampire.awakened&&state.age>=13&&Math.random()<.22){state.clue++;log('Uma presença estranha parece reconhecer algo em você. Uma pista sobrenatural foi registrada.','mistério')}
+ const choices=ev.c.map(c=>[c[0],()=>applyChoice(c[1],ev.t)]);
+ if(state.vampire.awakened&&state.vampire.essence<35)choices.push(['Meditar para recuperar essência',()=>{state.vampire.essence=clamp(state.vampire.essence+18);state.happiness=clamp(state.happiness+2);log('Você meditou e recuperou parte da essência.','vampiro');render()}]);
+ if(state.age>=18&&!state.vampire.awakened&&state.mode==='fantasia'&&state.clue>=3)choices.push(['Seguir o chamado da noite',()=>{awakenVampire()}]);
+ renderEvent(ev.t,ev.d,choices.slice(0,4));save();render();
+ if(state.age>=100&&!state.vampire.awakened&&Math.random()<.28){state.alive=false;state.legacy.push({name:state.name,age:state.age,summary:'Uma vida humana encerrada.'});log('Sua vida chegou ao fim após uma longa jornada.','fim');render()}
+ if(state.vampire.awakened&&state.age>=1000){state.alive=false;state.legacy.push({name:state.name,age:state.age,summary:'Uma existência vampírica de séculos chegou ao fim.'});log('Depois de séculos, sua existência sobrenatural chegou ao fim.','fim');render()}
+}
+function applyChoice(effects,title){if(!state.alive)return;for(const [k,v] of Object.entries(effects)){if(k==='money')state.money=Math.max(0,state.money+v);else if(k==='relationships')state.family.forEach(n=>{n.relationship=clamp(n.relationship+v)});else if(k==='clue')state.clue+=v;else if(k in state)state[k]=clamp(state[k]+v);else if(k==='stress')state.stress=clamp(state.stress+v)}log('Sua decisão em “'+title+'” alterou o rumo da história.','escolha');save();render();$('yearEvent').innerHTML='<h2>Consequências registradas</h2><p>Sua escolha foi aplicada. O mundo reagirá a essas mudanças nos próximos acontecimentos.</p><button class="primary" id="continueEvent">Continuar</button>';$('continueEvent').onclick=()=>{if(state.alive)renderEvent('Um novo capítulo aguarda','Quando quiser avançar o tempo, envelheça exatamente um ano.',[['Avançar 1 ano',ageUp]])}}
+function renderScene(){
+ $('sceneTitle').innerHTML='<h2>'+places[scene].title+'</h2>';$('sceneArt').textContent=places[scene].art;$('sceneDesc').textContent=places[scene].desc;
+ $('scenePlaces').innerHTML=Object.entries(places).map(([id,p])=>`<button data-place="${id}" class="${scene===id?'primary':''}">${p.art.split(' ')[0]} ${p.title}</button>`).join('');
+ $('scenePlaces').querySelectorAll('[data-place]').forEach(b=>b.onclick=()=>{scene=b.dataset.place;playTone(430);renderScene()});
+ $('sceneActions').innerHTML=places[scene].actions.map(a=>`<button data-action="${a[1]}">${a[0]}</button>`).join('');
+ $('sceneActions').querySelectorAll('[data-action]').forEach(b=>b.onclick=()=>sceneAction(b.dataset.action));
+}
+function sceneAction(a){if(!state.alive)return;let msg='';
+ const acts={
+ talk:()=>{const n=rand(state.family.filter(n=>n.alive));if(n){n.relationship=clamp(n.relationship+5);n.mood=clamp(n.mood+5);state.happiness=clamp(state.happiness+3);msg='Você conversou com '+n.name+'. O vínculo ficou mais forte.'}else msg='Você passou um momento em silêncio.'},
+ rest:()=>{state.energy=clamp(state.energy+22);state.health=clamp(state.health+3);msg='Você descansou e recuperou energia.'},
+ chores:()=>{state.happiness=clamp(state.happiness+1);state.reputation=clamp(state.reputation+1);state.energy=clamp(state.energy-5);msg='A casa ficou mais organizada.'},
+ cook:()=>{if(state.money<12){msg='Você não tem dinheiro suficiente para comprar ingredientes.'}else{state.money-=12;state.health=clamp(state.health+4);state.happiness=clamp(state.happiness+3);msg='Você preparou uma refeição simples e se alimentou.'}},
+ fridge:()=>{msg='Geladeira: frutas, legumes e sobras simples. Os mantimentos são representados pelo orçamento da casa.'},
+ dishes:()=>{state.energy=clamp(state.energy-3);state.reputation=clamp(state.reputation+1);msg='Você lavou a louça e ajudou a família.'},
+ plants:()=>{state.happiness=clamp(state.happiness+4);state.creativity=clamp(state.creativity+1);msg='Cuidar das plantas trouxe tranquilidade.'},
+ reflect:()=>{state.stress=clamp(state.stress-8);state.intelligence=clamp(state.intelligence+1);msg='Você respirou fundo e organizou os pensamentos.'},
+ pet:()=>{state.happiness=clamp(state.happiness+5);msg='Um animal curioso aceitou sua companhia.'},
+ pond:()=>{state.stress=clamp(state.stress-4);msg='Na superfície da lagoa, as nuvens se movem lentamente.'},
+ clue:()=>{state.clue++;state.intelligence=clamp(state.intelligence+2);msg=state.mode==='fantasia'?'Você encontrou marcas antigas entre as pedras. Uma pista foi registrada.':'Você encontrou uma peça antiga, talvez ligada à história local.'},
+ restpond:()=>{state.energy=clamp(state.energy+8);msg='Você descansou à margem da água.'},
+ explore:()=>{state.energy=clamp(state.energy-8);state.clue++;if(state.mode==='fantasia'&&Math.random()<.35)state.vampire.essence=clamp(state.vampire.essence+4);msg='Você explorou a trilha e registrou uma nova pista.'},
+ sound:()=>{state.clue++;state.stress=clamp(state.stress+2);msg=state.mode==='fantasia'?'Um sussurro distante parece chamar seu nome. Você não viu ninguém.':'Um galho estalou na mata; pode ter sido apenas um animal.'},
+ home:()=>{scene='casa';msg='Você voltou para casa.'}
+ };
+ (acts[a]||(()=>{msg='Nada aconteceu.'}))();log(msg,'cena');$('sceneStatus').textContent=msg;playTone(500);save();render();$('sceneStatus').textContent=msg;
+}
+function renderFamily(){
+ const people=[...state.family,...state.friends,...(state.partner?[state.partner]:[]),...state.children];
+ $('familyList').innerHTML=people.map(n=>`<div class="card npc"><div class="portrait">${portraitEmoji(n.gender,n.age,n.portraitSeed||0)}</div><div style="flex:1"><b>${esc(n.name)}</b><div class="muted small">${esc(n.role||'Conhecido')} • ${n.age} anos</div><div class="metric"><span>Vínculo</span><b>${Math.round(n.relationship||40)}%</b></div><div class="bar"><i style="width:${clamp(n.relationship||40)}%"></i></div><div class="small muted">Humor: ${Math.round(n.mood||50)}%</div></div><button data-chat="${n.id}">Conversar</button></div>`).join('')||'<p class="muted">Você ainda não conhece ninguém.</p>';
+ $('familyList').querySelectorAll('[data-chat]').forEach(b=>b.onclick=()=>{let n=people.find(p=>p.id===b.dataset.chat);if(n){n.relationship=clamp((n.relationship||40)+4);n.mood=clamp((n.mood||50)+3);state.social=clamp(state.social+1);log('Você conversou com '+n.name+'.','relação');save();renderFamily();render()}})
+}
+function meet(){const g=rand(['masc','fem','nb']);const n={...makeNpc('Amigo',Math.max(15,state.age),g),relationship:45,mood:55};state.friends.push(n);state.social=clamp(state.social+2);log('Você conheceu '+n.name+'. O vínculo ainda é recente.','relação');save();render()}
+function renderCareer(){
+ $('careerSummary').innerHTML=`<div class="card"><h3>Trabalho atual</h3><p>${esc(state.job||'Sem emprego')}</p><p class="muted small">${state.job?'Renda mensal estimada: '+money((jobs.find(j=>j.name===state.job)||{}).salary||0):'Você pode estudar ou procurar uma vaga adequada à idade.'}</p></div><div class="card"><h3>Formação</h3><p>${esc(state.educationPath)}</p><p class="muted small">Educação: ${state.education} • Reputação: ${state.reputation}</p></div>`;
+ const acts=[];if(state.age>=15)acts.push(['Estudar',()=>{state.education=clamp(state.education+4);state.intelligence=clamp(state.intelligence+2);state.energy=clamp(state.energy-5);state.educationPath='Estudos gerais';log('Você dedicou tempo aos estudos.','carreira')}]);
+ if(state.age>=16)acts.push(['Procurar emprego',()=>{const eligible=jobs.filter(j=>state.age>=j.min);if(!eligible.length){log('Ainda não há vagas adequadas à sua idade.','carreira')}else{const j=eligible[Math.min(eligible.length-1,Math.floor((state.education+state.social)/35))];state.job=j.name;state.reputation=clamp(state.reputation+2);log('Você conseguiu uma vaga como '+j.name+'.','carreira')}}]);
+ acts.push(['Fazer trabalho temporário',()=>{if(state.age<14){log('Você ainda é muito jovem para esse tipo de trabalho.','carreira')}else{let gain=state.age<16?25:120;state.money+=gain;state.energy=clamp(state.energy-10);log('Você fez uma tarefa temporária e recebeu '+money(gain)+'.','economia')}}]);
+ acts.push(['Praticar habilidade',()=>{state.creativity=clamp(state.creativity+3);state.intelligence=clamp(state.intelligence+1);state.energy=clamp(state.energy-4);log('Você praticou uma habilidade.','carreira')}]);
+ $('careerActions').innerHTML=acts.map((a,i)=>`<button data-ca="${i}">${a[0]}</button>`).join('');$('careerActions').querySelectorAll('[data-ca]').forEach(b=>b.onclick=()=>{acts[+b.dataset.ca][1]();save();render()});
+ const houses=[{name:'Casa da família',cost:0,level:0},{name:'Quarto alugado',cost:1800,level:1},{name:'Apartamento simples',cost:12000,level:2},{name:'Casa própria',cost:65000,level:3},{name:'Casa ampla',cost:160000,level:4}];
+ $('housing').innerHTML=`<p>Moradia atual: <b>${esc(state.home)}</b></p><div class="row">${houses.filter(h=>h.level>state.homeLevel).map(h=>`<button data-house="${h.level}">${h.name} — ${money(h.cost)}</button>`).join('')||'<span class="muted">Você já possui a moradia mais ampla desta lista.</span>'}</div>`;
+ $('housing').querySelectorAll('[data-house]').forEach(b=>b.onclick=()=>{const h=houses.find(h=>h.level===+b.dataset.house);if(h&&state.money>=h.cost){state.money-=h.cost;state.home=h.name;state.homeLevel=h.level;log('Você mudou para: '+h.name+'.','moradia');save();render()}else{alert('Saldo insuficiente para essa moradia.')}})
+}
+function renderCity(){
+ state.weather=state.weather||rand(['Céu limpo','Chuva leve','Neblina','Vento frio']);
+ $('weatherText').textContent=`${state.city} • Ano ${state.year}, mês ${state.calendarMonth}/12 • Clima: ${state.weather}. O calendário e o clima podem alterar o tom dos acontecimentos.`;
+ $('cityCards').innerHTML=`<div class="card"><h3>Praça central</h3><p>Um ponto de encontro com artistas, comerciantes e notícias.</p><button data-cityact="square">Visitar praça</button></div><div class="card"><h3>Biblioteca</h3><p>Livros, pesquisa e pistas sobre a região.</p><button data-cityact="library">Pesquisar</button></div><div class="card"><h3>Mercado</h3><p>Compras e pequenos trabalhos locais.</p><button data-cityact="market">Fazer compras</button></div><div class="card"><h3>Arquivo municipal</h3><p>Registros antigos e mistérios não resolvidos.</p><button data-cityact="archive">Investigar arquivos</button></div>`;
+ $('cityCards').querySelectorAll('[data-cityact]').forEach(b=>b.onclick=()=>{let a=b.dataset.cityact;if(a==='square'){state.social=clamp(state.social+2);state.happiness=clamp(state.happiness+2);log('Você visitou a praça e encontrou movimento na cidade.','cidade')}if(a==='library'){state.intelligence=clamp(state.intelligence+3);state.clue++;log('Uma pesquisa na biblioteca revelou uma pista.','mistério')}if(a==='market'){if(state.money>=25){state.money-=25;state.health=clamp(state.health+2);log('Você comprou itens úteis no mercado.','economia')}else log('Você não tinha saldo suficiente para comprar itens.','economia')}if(a==='archive'){state.clue+=2;state.intelligence=clamp(state.intelligence+2);log('Os arquivos municipais guardam referências a uma antiga família.','mistério')}save();render()});
+ $('travelCity').innerHTML=cities.filter(c=>c!==state.city).map(c=>`<option>${c}</option>`).join('');
+ $('newsList').innerHTML=(state.news.length?state.news:generateNews()).slice(0,6).map(n=>`<div class="logitem">${esc(n)}</div>`).join('');
+}
+function generateNews(){return [`A biblioteca de ${state.city} ampliou o horário de atendimento.`,`Uma feira comunitária está prevista para este mês.`,`Moradores relatam neblina incomum perto da floresta.`,`O mercado local anunciou uma campanha de doações.`]}
+function renderVampire(){
+ if(state.mode!=='fantasia'){$('vampireContent').innerHTML='<div class="card"><h2>Modo Realista ativo</h2><p>O sobrenatural está desativado nesta vida. A progressão humana, família, carreira, economia, cidades e mistérios realistas continuam disponíveis.</p><p>Para habilitar o caminho vampírico, inicie uma nova vida no modo Fantasia.</p></div>';return}
+ const v=state.vampire;
+ $('vampireContent').innerHTML=`<div class="grid2"><div class="card"><h3>Estado</h3><p><b>${v.awakened?'Vampiro desperto':'Humano — linhagem adormecida'}</b></p><p>Classificação: ${esc(v.rank)}</p><p>Linhagem: ${esc(v.lineage)}</p><div class="metric"><span>Essência vampírica</span><b>${Math.round(v.essence)}%</b></div><div class="bar"><i style="width:${v.essence}%;background:linear-gradient(90deg,#9d69ff,#62e7f1)"></i></div><p class="muted small">Essência baixa enfraquece os poderes. Em 0%, poderes indisponíveis e vulnerabilidade elevada.</p></div><div class="card"><h3>Missões & habilidades</h3><p>Missões concluídas: ${v.missions}/3 para a ascensão.</p><p>${v.skills.length?'Habilidades: '+v.skills.map(esc).join(', '):'Nenhuma habilidade desbloqueada.'}</p><p class="muted small">A ascensão a Lorde/Dama Vampiro exige cumprir três missões e manter essência suficiente.</p></div></div>
+ <div class="panel" style="margin-top:12px"><h2>Investigações da noite</h2><p>Investigue pistas, explore a floresta e escolha como responder ao chamado. A transformação não é automática: é uma decisão narrativa.</p><div class="row"><button id="vClue">Investigar sinais antigos</button><button id="vMeditate">Meditar e recuperar essência</button><button id="vMission">Iniciar missão vampírica</button><button id="vAwaken" class="primary" ${v.awakened?'disabled':''}>Aceitar a transformação</button></div><p class="status">As ações são limitadas pelo estado da vida e não geram progresso infinito por repetição.</p></div>`;
+ $('vClue').onclick=()=>{state.clue+=1;state.intelligence=clamp(state.intelligence+2);log('Você estudou os sinais da linhagem noturna.','vampiro');save();render()};
+ $('vMeditate').onclick=()=>{if(!v.awakened){state.stress=clamp(state.stress-5);log('Você meditou sobre as lendas, mas ainda não é vampiro.','vampiro')}else{v.essence=clamp(v.essence+16);state.energy=clamp(state.energy+4);log('A meditação recuperou parte da essência.','vampiro')}save();render()};
+ $('vMission').onclick=()=>mission();
+ $('vAwaken').onclick=()=>{if(state.age<16||state.clue<2){alert('Você precisa ter pelo menos 16 anos e reunir 2 pistas sobrenaturais. Explore a lagoa, a floresta ou os arquivos.');return}awakenVampire()};
+}
+function awakenVampire(){if(state.mode!=='fantasia'||state.vampire.awakened)return;state.vampire.awakened=true;state.vampire.rank='Recém-desperto';state.vampire.essence=100;state.vampire.lineage=rand(['Casa Vesper','Sangue da Lua','Linhagem do Véu','Ordem da Rosa Negra']);state.vampire.skills=['Sentidos noturnos'];state.health=clamp(state.health+8);log('Você aceitou a transformação. Sua linhagem é '+state.vampire.lineage+'. Os sentidos noturnos despertaram, mas a essência precisa ser preservada.','vampiro');save();render()}
+function mission(){const v=state.vampire;if(!v.awakened){if(state.clue>=2&&state.age>=16)awakenVampire();else alert('Reúna pistas e tenha pelo menos 16 anos antes de iniciar o caminho vampírico.');return}
+ if(v.missions>=3){alert('As três missões principais já foram concluídas.');return}
+ const missions=[
+  {t:'Ecos da linhagem',d:'Descubra a origem de um símbolo escondido na floresta.',ok:state.clue>=2,reward:'Passo Sombrio'},
+  {t:'Juramento da noite',d:'Fortaleça os laços com sua linhagem e mantenha a essência acima de 30%.',ok:v.essence>=30&&state.social>=10,reward:'Véu Noturno'},
+  {t:'Prova do crepúsculo',d:'Demonstre autocontrole e preserve sua essência durante uma decisão difícil.',ok:v.essence>=45&&state.health>=35,reward:'Comando da Sombra'}
+ ];
+ const m=missions[v.missions];if(!m.ok){alert('Missão: '+m.t+'\n'+m.d+'\n\nCondições ainda não cumpridas. Explore, fortaleça seus atributos e recupere essência.');return}
+ v.missions++;v.skills.push(m.reward);v.essence=clamp(v.essence-8);log('Missão concluída: '+m.t+'. Habilidade desbloqueada: '+m.reward+'.','vampiro');
+ if(v.missions>=3){v.rank=state.gender==='fem'?'Dama Vampiro':'Lorde Vampiro';v.skills.push('Autoridade da linhagem');log('Ascensão alcançada: '+v.rank+'. Sua posição foi conquistada por três missões.','vampiro')}
+ save();render();
+}
+function renderDiary(){
+ $('legacySummary').innerHTML=`<div class="card"><h3>Resumo da vida</h3><p>Idade atual: ${state.age}</p><p>Eventos registrados: ${state.log.length}</p><p>Decisões tomadas: ${state.log.filter(x=>x.type==='escolha').length}</p></div><div class="card"><h3>Legado</h3><p>Patrimônio disponível: ${money(state.money)}</p><p>Relações: ${state.family.length+state.friends.length+(state.partner?1:0)+state.children.length}</p><p>Estado: ${state.alive?'Vida em andamento':'Vida encerrada'}</p></div>`;
+ $('fullLog').innerHTML=state.log.map(l=>`<div class="logitem"><b>${l.age} anos • ${l.year} • ${esc(l.type)}</b><br>${esc(l.text)}</div>`).join('')||'<p class="muted">O diário está vazio.</p>';
+}
+function travel(){const c=$('travelCity').value;if(!c)return;const cost=180+Math.floor(Math.random()*120);if(state.money<cost){alert('Você precisa de '+money(cost)+' para essa viagem.');return}state.money-=cost;state.city=c;if(!state.visited.includes(c))state.visited.push(c);state.weather=rand(['Céu limpo','Chuva leve','Neblina','Vento frio']);state.news=generateNews();log('Você viajou para '+c+' e gastou '+money(cost)+'.','viagem');save();render()}
+$('startBtn').onclick=()=>{playTone(600);createLife()};
+$('continueBtn').onclick=()=>{if(!load())alert('Nenhum salvamento compatível foi encontrado neste navegador.')};
+$('wipeBtn').onclick=()=>{if(confirm('Apagar permanentemente o salvamento local deste jogo?')){localStorage.removeItem(SAVE_KEY);state=null;alert('Salvamento apagado neste navegador.')}};
+$('ageBtn').onclick=()=>{if(state?.alive){playTone(580);ageUp()}};
+$('nav').querySelectorAll('button').forEach(b=>b.onclick=()=>tab(b.dataset.tab));
+$('meetBtn').onclick=()=>{if(state.age<8){alert('Você ainda é muito jovem para essa ação.');return}meet()};
+$('callFamilyBtn').onclick=()=>{state.family.forEach(n=>{n.relationship=clamp(n.relationship+3);n.mood=clamp(n.mood+5)});state.happiness=clamp(state.happiness+4);log('Você reuniu a família para passar um tempo juntos.','relação');save();render()};
+$('travelBtn').onclick=travel;
+$('soundBtn').onclick=()=>{soundOn=!soundOn;state.settings.sound=soundOn;save();render()};
+$('saveBtn').onclick=()=>{save();alert('Progresso salvo neste dispositivo.')};
+$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='beyond-reality-save.json';a.click();URL.revokeObjectURL(url)};
+$('importBtn').onclick=()=>$('importFile').click();
+$('importFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const s=JSON.parse(await f.text());if(!s.name||!s.version)throw Error();state=s;save();startGame();render();alert('Salvamento importado.')}catch(err){alert('Arquivo de salvamento inválido.')}};
+$('newLifeBtn').onclick=()=>{if(confirm('Encerrar esta sessão e voltar à criação de personagem? O salvamento atual será mantido até você iniciar outra vida.')){$('setup').classList.remove('hidden');$('game').classList.add('hidden')}};
+document.addEventListener('click',e=>{if(e.target.closest('button'))playTone(420,.025)});
+if('serviceWorker'in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
+if(localStorage.getItem(SAVE_KEY)){try{const s=JSON.parse(localStorage.getItem(SAVE_KEY));if(s&&s.version>=5)$('continueBtn').textContent='Continuar vida salva ('+s.name+', '+s.age+' anos)'}catch(e){}}
+})();
+</script>
+</body></html>

@@ -1,0 +1,30 @@
+ULTIMATE LIFE SIMULATOR: BEYOND REALITY — V6
+
+CONTEÚDO
+- index.html: jogo completo em arquivo único
+- manifest.webmanifest: configuração instalável PWA
+- service-worker.js: cache offline e atualização da versão
+- icon-192.svg / icon-512.svg: ícones
+
+PUBLICAR NO GITHUB PAGES
+1. Extraia o ZIP.
+2. Envie os arquivos e pastas para a raiz do repositório GitHub, substituindo os arquivos antigos correspondentes.
+3. Faça Commit changes.
+4. Em Settings > Pages, configure Deploy from a branch, branch main, folder /(root), se ainda não estiver configurado.
+5. Abra o endereço HTTPS do GitHub Pages no Chrome, aguarde carregar, e escolha Instalar app/Adicionar à tela inicial.
+6. Abra uma vez com internet para o service worker guardar os arquivos; depois teste o modo avião.
+
+RECURSOS IMPLEMENTADOS
+- Criação de personagem e escolha de modo Realista/Fantasia.
+- Avanço de idade de exatamente um ano por ação, eventos com escolhas e consequências.
+- Estatísticas persistentes, economia, estudos, carreira, moradia e viagens.
+- Família e NPCs com nomes, idade, relação, humor e retratos emoji que mudam com a faixa etária.
+- Cena Real com casa, cozinha/geladeira, quintal, lagoa e floresta; ações interativas.
+- Cidade, calendário, clima, biblioteca, mercado, arquivos e notícias locais.
+- Caminho vampírico opcional no modo Fantasia, essência, pistas, missões e habilidades.
+- Diário cronológico, legado, autosave local, exportação/importação JSON.
+- Som discreto nos botões e interface responsiva para celular/desktop.
+- PWA com cache offline.
+
+LIMITES IMPORTANTES
+Este pacote é uma versão jogável e funcional, não um jogo comercial acabado. A variedade de acontecimentos é produzida por um catálogo de eventos e regras combinatórias; não existem 10.000/100.000 narrativas individuais escritas manualmente. Os NPCs e retratos são gerados no próprio jogo e não usam imagens realistas individuais. O salvamento fica no navegador/dispositivo e não sincroniza entre dispositivos. O modo offline só fica disponível após publicar em HTTPS e carregar o site uma vez.
